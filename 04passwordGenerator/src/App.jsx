@@ -6,6 +6,8 @@ const App = () => {
   const [numberAllowed,setNumberAllowed]=useState(false);
   const [charAllowed,setCharAllowed]=useState(false);
   const [password,setPassword]=useState("");
+  const [copy,setCopy]=useState('copy');
+
 
   const passwordGenerator=useCallback(()=>{
 
@@ -27,6 +29,12 @@ const App = () => {
     passwordGenerator()
   },[length,numberAllowed,charAllowed,passwordGenerator])
 
+  const copyToClipBoard=()=>{
+    if(navigator.clipboard.writeText(password)){
+      setCopy('Copied')
+    }
+    }
+  
   return (
     <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 mb-4 my-8 text-orange-500 bg-gray-500'>
       <h1 
@@ -40,8 +48,8 @@ const App = () => {
         placeholder='password'
         readOnly
         />
-        <button className='outline-none bg-indigo-500 text-white px-3 py.5 shrink-0'>
-        copy</button>
+        <button onClick={copyToClipBoard} className='outline-none bg-indigo-500 text-white px-3 py.5 shrink-0'>
+        {copy}</button>
 
       </div>
 
