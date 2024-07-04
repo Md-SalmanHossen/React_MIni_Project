@@ -86,8 +86,8 @@ const App = () => {
           />
         </div>
         <label htmlFor="characterInput">Characters</label>
-
       </div>
+      
     </div>
   );
 };
