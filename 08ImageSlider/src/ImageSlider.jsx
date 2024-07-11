@@ -23,7 +23,7 @@ const ImageSlider = ({ images }) => {
                     src={images[currentImgIndex]}
                     alt="slide" 
                     className='w-full h-auto rounded-lg' 
-                    style={{ maxHeight: '500px' }} 
+                    style={{ maxHeight:'500px'}} 
                 />
             </div>
 
